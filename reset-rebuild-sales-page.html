@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reset & Rebuild™ — Coach Paris Simone</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8; --warm: #FAF7F2; --sand: #E8DDD0;
+    --taupe: #C4B5A5; --brown: #8B7355; --dark: #2C2418;
+    --accent: #B8965A; --text: #3D3228; --text-light: #7A6E63;
+    --green: #7A9E7E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 100px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,150,90,0.15) 0%, transparent 70%);
+  }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; position: relative; }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 9vw, 76px);
+    font-weight: 300; line-height: 1.0;
+    margin-bottom: 6px; position: relative;
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .hero-sub-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 300; font-style: italic;
+    color: rgba(245,240,232,0.55);
+    margin-bottom: 28px; position: relative;
+  }
+  .hero-desc { max-width: 500px; margin: 0 auto 40px; font-size: 15px; color: rgba(245,240,232,0.7); line-height: 1.75; position: relative; }
+  .hero-price { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--taupe); letter-spacing: 0.06em; margin-bottom: 20px; position: relative; }
+  .hero-price strong { color: var(--accent); font-size: 22px; font-weight: 500; }
+  .btn-primary {
+    display: inline-block; background: var(--accent); color: white;
+    padding: 18px 44px; border-radius: 4px; font-size: 13px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    transition: all 0.25s; position: relative;
+  }
+  .btn-primary:hover { background: var(--brown); transform: translateY(-1px); }
+  .hero-note { font-size: 11px; color: rgba(245,240,232,0.35); margin-top: 14px; letter-spacing: 0.06em; }
+
+  /* ── SECTION SHARED ── */
+  .section-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 400; line-height: 1.1; margin-bottom: 40px; }
+
+  /* ── PAIN ── */
+  .pain { padding: 90px 24px; background: var(--cream); }
+  .pain-inner { max-width: 680px; margin: 0 auto; }
+  .pain-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 5vw, 50px); font-weight: 300; line-height: 1.1; margin-bottom: 10px; }
+  .pain-headline em { font-style: italic; color: var(--accent); }
+  .pain-opening { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 48px; max-width: 560px; }
+  .pain-blocks { display: flex; flex-direction: column; gap: 0; }
+  .pain-block { display: grid; grid-template-columns: 48px 1fr; gap: 0 20px; padding: 30px 0; border-bottom: 1px solid var(--sand); }
+  .pain-block:last-child { border-bottom: none; }
+  .pain-num { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--sand); line-height: 1; padding-top: 2px; }
+  .pain-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500; margin-bottom: 8px; line-height: 1.2; }
+  .pain-text { font-size: 14px; color: var(--text-light); line-height: 1.8; }
+  .pain-text strong { color: var(--text); font-weight: 500; }
+  .pain-shift {
+    margin-top: 52px; background: var(--dark); border-radius: 16px;
+    padding: 36px; text-align: center; color: var(--cream);
+    position: relative; overflow: hidden;
+  }
+  .pain-shift::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 240px; height: 240px; border-radius: 50%;
+    background: rgba(184,150,90,0.1);
+  }
+  .pain-shift-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .pain-shift-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 3vw, 26px); font-weight: 300; font-style: italic; line-height: 1.5; color: var(--cream); max-width: 500px; margin: 0 auto; }
+  .pain-shift-text strong { font-style: normal; font-weight: 500; color: var(--accent); }
+
+  /* ── FOR WHO ── */
+  .for-who { padding: 80px 24px; background: var(--warm); text-align: center; }
+  .for-who-grid { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; text-align: left; }
+  .for-card { background: var(--cream); border: 1px solid var(--sand); border-radius: 12px; padding: 22px 20px; }
+  .for-card-icon { font-size: 20px; margin-bottom: 10px; }
+  .for-card-text { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  /* ── WHAT'S INSIDE ── */
+  .what { padding: 80px 24px; background: var(--cream); }
+  .what-inner { max-width: 760px; margin: 0 auto; }
+  .what-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 400; line-height: 1.1; margin-bottom: 8px; }
+  .what-sub { font-size: 14px; color: var(--text-light); margin-bottom: 40px; max-width: 500px; }
+  .feature-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--sand); border-radius: 14px; overflow: hidden; }
+  .feature-item { display: flex; gap: 18px; align-items: flex-start; padding: 24px; border-bottom: 1px solid var(--sand); background: var(--warm); transition: background 0.2s; }
+  .feature-item:last-child { border-bottom: none; }
+  .feature-item:hover { background: var(--cream); }
+  .feature-arrow { color: var(--accent); font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+  .feature-name { font-weight: 500; font-size: 15px; margin-bottom: 4px; }
+  .feature-desc { font-size: 13px; color: var(--text-light); line-height: 1.65; }
+
+  /* ── 7 DAYS ── */
+  .days { padding: 80px 24px; background: var(--dark); color: var(--cream); text-align: center; }
+  .days .section-title { color: var(--cream); }
+  .days-sub { font-size: 14px; color: rgba(245,240,232,0.5); margin-bottom: 44px; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .days-grid { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; text-align: left; }
+  .day-chip { background: rgba(245,240,232,0.05); border: 1px solid rgba(245,240,232,0.1); border-radius: 10px; padding: 16px; }
+  .day-num { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .day-focus { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; margin-bottom: 3px; }
+  .day-desc { font-size: 11px; color: rgba(245,240,232,0.45); line-height: 1.5; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonial { padding: 80px 24px; background: var(--warm); text-align: center; }
+  .testimonial-grid { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; text-align: left; }
+  .t-card { background: var(--cream); border: 1.5px solid var(--sand); border-radius: 14px; padding: 24px 22px; display: flex; flex-direction: column; gap: 14px; }
+  .t-card-featured { background: var(--dark); border-color: var(--dark); grid-column: 1 / -1; }
+  .t-stars { color: var(--accent); font-size: 16px; letter-spacing: 2px; }
+  .t-quote { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; font-weight: 300; line-height: 1.65; color: var(--text); flex: 1; }
+  .t-card-featured .t-quote { color: var(--cream); font-size: 20px; }
+  .t-attr { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .t-card-featured .t-attr { color: rgba(196,181,165,0.6); }
+
+  /* ── CTA ── */
+  .cta-section { padding: 90px 24px; background: var(--cream); text-align: center; }
+  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 56px); font-weight: 300; line-height: 1.05; margin-bottom: 16px; }
+  .cta-title em { font-style: italic; color: var(--accent); }
+  .cta-sub { font-size: 14px; color: var(--text-light); margin-bottom: 36px; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .price-display { margin-bottom: 28px; }
+  .price-now { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 400; color: var(--dark); }
+  .price-note { font-size: 11px; color: var(--text-light); margin-top: 4px; }
+  .cta-list { list-style: none; max-width: 380px; margin: 0 auto 36px; text-align: left; display: flex; flex-direction: column; gap: 8px; }
+  .cta-list li { font-size: 13px; color: var(--text); display: flex; gap: 8px; align-items: flex-start; }
+  .cta-list li::before { content: '✓'; color: var(--green); font-weight: 600; flex-shrink: 0; }
+
+  /* ── BRIDGE ── */
+  .bridge { padding: 60px 24px; background: var(--sand); text-align: center; }
+  .bridge-inner { max-width: 600px; margin: 0 auto; }
+  .bridge-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 30px); font-weight: 400; line-height: 1.3; margin-bottom: 12px; }
+  .bridge-text { font-size: 14px; color: var(--text-light); margin-bottom: 24px; line-height: 1.7; }
+  .btn-secondary {
+    display: inline-block; background: none; color: var(--dark);
+    padding: 14px 36px; border-radius: 4px; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    border: 1.5px solid var(--dark); transition: all 0.25s;
+  }
+  .btn-secondary:hover { background: var(--dark); color: var(--cream); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--dark); color: rgba(245,240,232,0.4); text-align: center; padding: 32px 24px; font-size: 12px; letter-spacing: 0.06em; }
+  footer strong { color: var(--accent); }
+  .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+  .footer-links a { color: rgba(196,181,165,0.6); font-size: 11px; text-decoration: none; }
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .days-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding: 80px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Coach Paris Simone · Passports 2 Fitness LLC</div>
+  <h1 class="hero-title">Reset <em>&</em> Rebuild™</h1>
+  <div class="hero-sub-title">7 Days to Rewire Your Body for Strength</div>
+  <p class="hero-desc">Not a detox. Not a challenge. A structured 7-day reset built on the Stress-Integrated Strength System™ — designed to feel doable, not draining.</p>
+  <div class="hero-price">Just <strong>$17</strong> — immediate access</div>
+  <a href="#YOUR-PAYMENT-LINK" class="btn-primary">Get Instant Access</a>
+  <div class="hero-note">Digital product — delivered immediately after purchase.</div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="pain-inner">
+    <div class="section-eyebrow">Before we get into it</div>
+    <h2 class="pain-headline">You don't need to<br>push <em>harder.</em></h2>
+    <p class="pain-opening">You've started programs before. You've been motivated before. And somewhere around Day 3 or 4, life happened — and you stopped. Not because you're undisciplined. Because the program wasn't built for the life you actually live.</p>
+
+    <div class="pain-blocks">
+      <div class="pain-block">
+        <div class="pain-num">01</div>
+        <div>
+          <div class="pain-title">You're exhausted before you even begin.</div>
+          <div class="pain-text">Work, responsibilities, the mental load of being a high-achieving woman — <strong>your nervous system is already running at capacity.</strong> Adding an intense program on top of that doesn't build strength. It compounds the stress.</div>
+        </div>
+      </div>
+      <div class="pain-block">
+        <div class="pain-num">02</div>
+        <div>
+          <div class="pain-title">You know what to do — you just can't seem to do it consistently.</div>
+          <div class="pain-text">That gap between knowing and doing isn't a willpower problem. <strong>It's a nervous system problem.</strong> When your body doesn't feel safe enough to change, it resists — no matter how motivated your mind is.</div>
+        </div>
+      </div>
+      <div class="pain-block">
+        <div class="pain-num">03</div>
+        <div>
+          <div class="pain-title">Every program feels like too much.</div>
+          <div class="pain-text">Long workouts. Complicated meal plans. Macros. Tracking. <strong>The overwhelm alone is enough to make you quit before you start.</strong> You need something that meets you where you actually are — not where you think you should be.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pain-shift">
+      <div class="pain-shift-eyebrow">The Reset</div>
+      <p class="pain-shift-text">Seven days isn't long. But it's <strong>enough to show your nervous system that change is safe.</strong> That's the only foundation consistency is ever built on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="for-who">
+  <div class="section-eyebrow">This is for you if</div>
+  <h2 class="section-title">You're ready to start —<br>you just need the right entry point.</h2>
+  <div class="for-who-grid">
+    <div class="for-card">
+      <div class="for-card-icon">🔄</div>
+      <div class="for-card-text">You've tried programs before and they didn't stick — and you're tired of blaming yourself for it.</div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon">🧠</div>
+      <div class="for-card-text">You want to understand why your body responds the way it does — not just follow a plan blindly.</div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon">⏱</div>
+      <div class="for-card-text">You don't have hours to spend in the gym. You need something structured, simple, and actually sustainable.</div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon">🌱</div>
+      <div class="for-card-text">You're looking for a starting point — something that builds your confidence before it challenges your limits.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROOF SECTION -->
+<section style="padding: 80px 24px; background: var(--warm);">
+  <div style="max-width: 680px; margin: 0 auto;">
+    <div class="section-eyebrow">The Approach</div>
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 400; line-height: 1.2; margin-bottom: 20px; color: var(--dark);">This isn't about doing more.<br>It's about training <em style="font-style:italic; color:var(--accent);">smarter.</em></h2>
+    <p style="font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 36px;">In a way your nervous system can sustain, repeat, and build on.</p>
+
+    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 24px; line-height: 1.7;">Over 7 days, you'll:</p>
+
+    <div style="display: flex; flex-direction: column; gap: 0; border: 1px solid var(--sand); border-radius: 14px; overflow: hidden;">
+      <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; border-bottom: 1px solid var(--sand); background: var(--cream);">
+        <div style="color: var(--accent); font-size: 16px; flex-shrink: 0; margin-top: 2px;">→</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65;">Slow down just enough to stabilize — without losing momentum</div>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; border-bottom: 1px solid var(--sand); background: var(--warm);">
+        <div style="color: var(--accent); font-size: 16px; flex-shrink: 0; margin-top: 2px;">→</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65;">Train with intentional tempo and structure your body can trust</div>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; border-bottom: 1px solid var(--sand); background: var(--cream);">
+        <div style="color: var(--accent); font-size: 16px; flex-shrink: 0; margin-top: 2px;">→</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65;">Build repeatable minimums that don't collapse under stress</div>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; border-bottom: 1px solid var(--sand); background: var(--warm);">
+        <div style="color: var(--accent); font-size: 16px; flex-shrink: 0; margin-top: 2px;">→</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65;">Break the all-or-nothing thinking that keeps you restarting</div>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; background: var(--cream);">
+        <div style="color: var(--accent); font-size: 16px; flex-shrink: 0; margin-top: 2px;">→</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65;">Experience what strength without overwhelm actually feels like</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 36px; background: var(--dark); border-radius: 14px; padding: 32px 28px; text-align: center; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(184,150,90,0.1);"></div>
+      <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(17px, 2.5vw, 22px); font-style: italic; font-weight: 300; color: var(--cream); line-height: 1.6; margin-bottom: 14px;">By Day 7, you won't just have finished a reset. You'll have <strong style="font-style: normal; font-weight: 500; color: var(--accent);">proof — in your own body</strong> — that consistency is possible for you.</p>
+      <p style="font-size: 13px; color: var(--taupe); letter-spacing: 0.06em;">That proof is the foundation everything else is built on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="what">
+  <div class="what-inner">
+    <div class="section-eyebrow">What's inside</div>
+    <h2 class="what-title">Everything is designed to<br>feel doable. Not draining.</h2>
+    <p class="what-sub">Seven days. Six components. Zero overwhelm.</p>
+    <div class="feature-list">
+      <div class="feature-item">
+        <div class="feature-arrow">→</div>
+        <div>
+          <div class="feature-name">7 Days of Structured Strength Sessions</div>
+          <div class="feature-desc">No guesswork. Clear daily direction that tells you exactly what to do and why — so your brain can stop fighting and your body can start adapting.</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-arrow">→</div>
+        <div>
+          <div class="feature-name">Guided Regulation Prompts</div>
+          <div class="feature-desc">Before and after each session, you'll check in with your nervous system. This is what separates Reset & Rebuild™ from every other 7-day program — you're not just training your body, you're training your capacity.</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-arrow">→</div>
+        <div>
+          <div class="feature-name">Mood + Sleep Tracking Tools</div>
+          <div class="feature-desc">Because your output has to match your input. These tools help you see the connection between how you feel and how you perform — in real time.</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-arrow">→</div>
+        <div>
+          <div class="feature-name">Simple Nutrition Structure (No Macro Tracking)</div>
+          <div class="feature-desc">Eating to support your nervous system doesn't require a calculator. This gives you a sustainable daily structure without restriction, rules, or overwhelm.</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-arrow">→</div>
+        <div>
+          <div class="feature-name">Identity-Based Reflection Questions</div>
+          <div class="feature-desc">Consistency is built in the mind before it shows up in the body. These daily questions rewire how you see yourself as someone who shows up — even on hard days.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 DAYS -->
+<section class="days">
+  <div class="section-eyebrow">The Structure</div>
+  <h2 class="section-title" style="color:var(--cream);">7 Days. Clear direction.<br>Every single day.</h2>
+  <p class="days-sub">Each day has a focus, a session, and a reflection. Nothing is left to chance.</p>
+  <div class="days-grid">
+    <div class="day-chip">
+      <div class="day-num">Day 01</div>
+      <div class="day-focus">Regulate</div>
+      <div class="day-desc">Check in. Set the baseline. Begin with safety.</div>
+    </div>
+    <div class="day-chip">
+      <div class="day-num">Day 02</div>
+      <div class="day-focus">Ground</div>
+      <div class="day-desc">Lower body foundation. Nervous system anchoring.</div>
+    </div>
+    <div class="day-chip">
+      <div class="day-num">Day 03</div>
+      <div class="day-focus">Restore</div>
+      <div class="day-desc">Active recovery. Mobility and reflection.</div>
+    </div>
+    <div class="day-chip">
+      <div class="day-num">Day 04</div>
+      <div class="day-focus">Build</div>
+      <div class="day-desc">Upper body. Controlled load. Identity check-in.</div>
+    </div>
+    <div class="day-chip">
+      <div class="day-num">Day 05</div>
+      <div class="day-focus">Integrate</div>
+      <div class="day-desc">Full body. Pattern recognition. Momentum.</div>
+    </div>
+    <div class="day-chip">
+      <div class="day-num">Day 06</div>
+      <div class="day-focus">Reset</div>
+      <div class="day-desc">Rest with purpose. Sleep and mood reflection.</div>
+    </div>
+    <div class="day-chip">
+      <div class="day-num">Day 07</div>
+      <div class="day-focus">Rise</div>
+      <div class="day-desc">Final session. Debrief. What comes next.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial">
+  <div class="section-eyebrow">Real Results</div>
+  <h2 class="section-title">What Women Are Saying</h2>
+  <div class="testimonial-grid">
+    <div class="t-card t-card-featured">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">"Paris motivated me to stay consistent and showed me that giving up isn't an option. I highly recommend this for anyone who feels discouraged and needs help starting the process."</p>
+      <div class="t-attr">God's Favorite · Google Review</div>
+    </div>
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">"I've been following your program and philosophy for about a month now. I don't have the guilt and stress anymore. Thank you so much for this."</p>
+      <div class="t-attr">@LessonSmith · YouTube Community</div>
+    </div>
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">"Just wanted to thank you for boosting my confidence and making me want to work harder toward my goal."</p>
+      <div class="t-attr">Keshaun W. · Coaching Client</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-eyebrow">Ready to reset</div>
+  <h2 class="cta-title">7 days to show your body<br>that change is <em>safe.</em></h2>
+  <p class="cta-sub">The foundation of everything. Start here — build from here.</p>
+  <div class="price-display">
+    <div class="price-now">$17</div>
+    <div class="price-note">One-time purchase · Immediate access</div>
+  </div>
+  <ul class="cta-list">
+    <li>7 structured daily strength sessions</li>
+    <li>Guided nervous system regulation prompts</li>
+    <li>Mood + sleep tracking tools</li>
+    <li>Simple nutrition structure — no macro tracking</li>
+    <li>Identity-based daily reflection questions</li>
+  </ul>
+  <a href="#YOUR-PAYMENT-LINK" class="btn-primary">Get Instant Access — $17</a>
+</section>
+
+<!-- BRIDGE TO REBUILD & RISE -->
+<section class="bridge">
+  <div class="bridge-inner">
+    <div class="section-eyebrow">What comes after</div>
+    <h2 class="bridge-title">Reset & Rebuild™ is the beginning.<br>Rebuild & Rise™ is where you build.</h2>
+    <p class="bridge-text">After 7 days your nervous system will be primed, your patterns will be clearer, and your body will be ready for the full 30-day SISS methodology. When you're ready — it's waiting for you.</p>
+    <a href="https://buy.stripe.com/aFa5kE3Ku2JnfBS1LW3AY0g" class="btn-secondary">Learn About Rebuild & Rise™ →</a>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Coach Paris Simone</strong> · Passports 2 Fitness LLC · Stress-Integrated Strength System™</p>
+  <p style="margin-top:8px;">© 2026 Passports 2 Fitness LLC. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="https://coachparis.github.io/policies/#privacy">Privacy Policy</a>
+    <a href="https://coachparis.github.io/policies/#support">Customer Support</a>
+    <a href="https://coachparis.github.io/policies/#refund">Refund Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>
